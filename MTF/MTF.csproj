@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="cTrader.Automate" Version="*"/>
+    </ItemGroup>
+
+    <!-- cTrader.Automate.SourceGenerators is deliberately NOT referenced. It is
+         the legacy layout that owns the parameter list through config.json, and
+         it raises CGEN006 when [Robot]/[Parameter] attributes are declared in
+         code at the same time. The parameter list lives in the attributes;
+         config.json only carries AccessRights/AddIndicators. This matches
+         kit_gold_london. -->
+</Project>
